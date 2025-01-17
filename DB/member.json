@@ -1,0 +1,48 @@
+{
+  "db-name": "member-history",
+  "members": [
+    {
+      "Leader": [
+        { "name": "lord VOLDEMORT", "tag-id": "1" },
+        { "name": "POLO", "tag-id": "2" }
+      ]
+    },
+    {
+      "CO-LEADER": [
+        { "name": "POLO", "tag-id": "1" },
+        { "name": "MrShoaibPlays", "tag-id": "2" }
+      ]
+    },
+    {
+      "STREET BOSS": [{ "name": "Samrat", "tag-id": "1" }]
+    },
+    {
+      "ADVISER": [{ "name": "backy684", "tag-id": "1" }]
+    },
+    {
+      "CAPOREGIME": [
+        { "name": "saidur22", "tag-id": "2" },
+        { "name": "MrShoaibPlays", "tag-id": "1" }
+      ]
+    },
+    {
+      "CHIEF OF ENFORCER": [
+        { "name": "shshesher", "tag-id": "2" },
+        { "name": "ovibosd", "tag-id": "1" }
+      ]
+    },
+    {
+      "ENFORCER": [
+        { "name": "rocky_vai11", "tag-id": "1" },
+        { "name": ".farshi123", "tag-id": "2" },
+        { "name": "dr.saru", "tag-id": "3" }
+      ]
+    },
+    {
+      "SOLDIER": [{ "name": "rasin4728", "tag-id": "1" }]
+    },
+    {
+      "ASSOCIATES": [{ "name": "hunny9932", "tag-id": "1" }]
+    }
+  ]
+}

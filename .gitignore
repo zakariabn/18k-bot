@@ -1,0 +1,22 @@
+# Node.js dependencies
+node_modules/
+
+# Environment variable files
+.env
+
+# Log files
+*.log
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Text files you want to exclude
+*.txt
+
+# Zip files
+*.zip
+
+#name specific file+
+test.js
+z_miniGame.html
