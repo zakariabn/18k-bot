@@ -5,6 +5,8 @@ import { REST, Routes } from "discord.js";
 
 const rest = new REST({ version: "10" }).setToken(process.env.APP_TOKEN);
 
+console.log(process.env.APP_TOKEN);
+
 const commands = [
   {
     name: "link",
@@ -103,7 +105,7 @@ const commands = [
 
     // Use Routes.applicationGuildCommands for guild-specific registration
     await rest.put(
-      Routes.applicationCommands(clintID), // For global commands
+      Routes.applicationCommands(process.env.CLIENT_ID), // For global commands
       { body: commands }
     );
 
