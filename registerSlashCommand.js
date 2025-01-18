@@ -97,6 +97,58 @@ const commands = [
       },
     ],
   },
+  {
+    name: "collect-tax",
+    description: "This command is used for tax collection system",
+    options: [
+      {
+        name: "payer-name", // Select a user
+        description: "Input the name for payer",
+        type: 3,
+        required: true,
+      },
+      {
+        name: "validity", // Select a user
+        description: "This tax validate expired day",
+        type: 10,
+        required: true,
+        choose: [
+          { name: "7-day", value: 7 },
+          { name: "3-day", value: 3 },
+        ],
+      },
+      {
+        name: "paid", // Select a user
+        description: "How much payer payed",
+        type: 10,
+        required: true,
+        choose: [
+          { name: "10k", value: 10000 },
+          { name: "6k", value: 6000 },
+        ],
+      },
+      {
+        name: "upload-nid", // Select a user
+        description: "Please upload a payer nid card for documentation",
+        type: 11,
+        required: true,
+        options: [
+          {
+            name: "file", // Correct: lowercase and alphanumeric
+            type: 11, // ATTACHMENT
+            description: "Upload an image file",
+            required: true,
+          },
+        ],
+      },
+      {
+        name: "due", // Select a user
+        description: "Due amount",
+        type: 10,
+        required: false,
+      },
+    ],
+  },
 ];
 
 (async () => {

@@ -1,0 +1,148 @@
+{
+  "members": [
+    {
+      "discord_user_id": "123456789012345678",
+      "real_name": "Tom Riddle",
+      "role": "LEADER",
+      "role_history": [
+        {
+          "role": "Leader",
+          "date": "2025-01-01"
+        }
+      ]
+    },
+
+    {
+      "discord_user_id": "234567890123456789",
+      "real_name": "Shoaib",
+      "role": "CO-LEADER",
+      "role_history": [
+        {
+          "role": "CO-LEADER",
+          "date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "discord_user_id": "345678901234567890",
+      "real_name": "Polo",
+      "role": "CO-LEADER",
+      "role_history": [
+        {
+          "role": "CO-LEADER",
+          "date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "discord_user_id": "456789012345678901",
+      "real_name": "Samrat",
+      "role": "STREET BOSS",
+      "role_history": [
+        {
+          "role": "STREET BOSS",
+          "date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "discord_user_id": "567890123456789012",
+      "real_name": "Backy",
+      "role": "ADVISER",
+      "role_history": [
+        {
+          "role": "ADVISER",
+          "date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "discord_user_id": "678901234567890123",
+      "real_name": "Saidur",
+      "role": "CAPOREGIME",
+      "role_history": [
+        {
+          "role": "CAPOREGIME",
+          "date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "discord_user_id": "789012345678901234",
+      "real_name": "Shesher",
+      "role": "CHIEF OF ENFORCER",
+      "role_history": [
+        {
+          "role": "CHIEF OF ENFORCER",
+          "date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "discord_user_id": "890123456789012345",
+      "real_name": "Ovibosd",
+      "role": "CHIEF OF ENFORCER",
+      "role_history": [
+        {
+          "role": "CHIEF OF ENFORCER",
+          "date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "discord_user_id": "901234567890123456",
+      "real_name": "Rocky",
+      "role": "ENFORCER",
+      "role_history": [
+        {
+          "role": "ENFORCER",
+          "date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "discord_user_id": "012345678901234567",
+      "real_name": "Farshi",
+      "role": "ENFORCER",
+      "role_history": [
+        {
+          "role": "ENFORCER",
+          "date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "discord_user_id": "112233445566778899",
+      "real_name": "Saru",
+      "role": "ENFORCER",
+      "role_history": [
+        {
+          "role": "ENFORCER",
+          "date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "discord_user_id": "223344556677889900",
+      "real_name": "Rasin",
+      "role": "SOLDIER",
+      "role_history": [
+        {
+          "role": "SOLDIER",
+          "date": "2025-01-01"
+        }
+      ]
+    },
+    {
+      "discord_user_id": "334455667788990011",
+      "real_name": "Hunny",
+      "role": "ASSOCIATES",
+      "role_history": [
+        {
+          "role": "ASSOCIATES",
+          "date": "2025-01-01"
+        }
+      ]
+    }
+  ]
+}

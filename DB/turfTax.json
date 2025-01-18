@@ -1,0 +1,15 @@
+{
+  "last_tax_code": "0",
+  "taxes": [
+    {
+      "tax_id": "",
+      "payer_name": "",
+      "B_Name": "",
+      "Validity": "",
+      "Due": "",
+      "Paid": "",
+      "nid": "",
+      "status": "active"
+    }
+  ]
+}
