@@ -17,6 +17,8 @@
     "dotenv": "^16.4.5",
     "lodash": "^4.17.21",
     "lowdb": "^7.0.1",
+    "moment-timezone": "^0.5.46",
+    "node-cron": "^3.0.3",
     "openai": "^4.73.0"
   },
   "type": "module",

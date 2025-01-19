@@ -11,15 +11,18 @@
         }
       ]
     },
-
     {
       "discord_user_id": "234567890123456789",
       "real_name": "Shoaib",
-      "role": "CO-LEADER",
+      "role": "Leader",
       "role_history": [
         {
           "role": "CO-LEADER",
           "date": "2025-01-01"
+        },
+        {
+          "role": "Leader",
+          "promote_day": "19-01-2025"
         }
       ]
     },

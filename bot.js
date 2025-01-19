@@ -5,6 +5,7 @@ import CommandsHandel from "./src/prefixCommands/prefixCommand.js";
 import SendGangPlayerStatus from "./src/features/gangsPlayersStatus/ourGangPlayersStatus.js";
 import interactionHandle from "./src/slashCommands/interactionHandel.js";
 import sendAllGangsPlayerStatus from "./src/features/gangsPlayersStatus/allGangPlayersStatus.js";
+import { dailyCornJob } from "./src/features/taxManagement/taxManagement.js";
 
 const client = new Client({
   intents: [
@@ -21,7 +22,6 @@ client.once(Events.ClientReady, (readyClient) => {
 
   // sending 18k player's online-offline status.
   if (readyClient) {
-    //
     // Set the bot's custom status
     client.user.setPresence({
       activities: [
@@ -37,6 +37,9 @@ client.once(Events.ClientReady, (readyClient) => {
     // sending status at bot startup
     SendGangPlayerStatus();
     sendAllGangsPlayerStatus();
+
+    //daily task. will triggered at midnight.
+    dailyCornJob.start();
   } else {
     return;
   }

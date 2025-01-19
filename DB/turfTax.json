@@ -1,15 +1,65 @@
 {
-  "last_tax_code": "0",
+  "last_tax_code": 1,
   "taxes": [
     {
       "tax_id": "",
       "payer_name": "",
-      "B_Name": "",
-      "Validity": "",
-      "Due": "",
-      "Paid": "",
+      "b_name": "",
+      "valid": "",
+      "expired_date": "",
+      "paid": "",
+      "due": "",
+      "collector": {
+        "name": "",
+        "id": ""
+      },
       "nid": "",
+      "status": ""
+    },
+    {
+      "tax_id": "tks-001",
+      "payer_name": "dafada",
+      "b_Name": "",
+      "valid": 7,
+      "expired_date": "2025-01-26 10:01:29",
+      "due": 0,
+      "paid": 10000,
+      "collector": {
+        "name": null,
+        "id": "805657176508334110"
+      },
+      "nid": "https://cdn.discordapp.com/ephemeral-attachments/1330068479952552006/1330386626072805398/Screenshot_323.png?ex=678dca99&is=678c7919&hm=7f4c5e6e10aec62f66e953e7ede41462a29901dc32b3ef0205048647b5c43307&",
       "status": "active"
+    },
+    {
+      "tax_id": "tks-001",
+      "payer_name": "dafada",
+      "b_Name": "",
+      "valid": 7,
+      "expired_date": "2025-01-15 10:01:29",
+      "due": 0,
+      "paid": 10000,
+      "collector": {
+        "name": null,
+        "id": "805657176508334110"
+      },
+      "nid": "https://cdn.discordapp.com/ephemeral-attachments/1330068479952552006/1330386626072805398/Screenshot_323.png?ex=678dca99&is=678c7919&hm=7f4c5e6e10aec62f66e953e7ede41462a29901dc32b3ef0205048647b5c43307&",
+      "status": "expired"
+    },
+    {
+      "tax_id": "tks-001",
+      "payer_name": "dafada",
+      "b_Name": "",
+      "valid": 7,
+      "expired_date": "2025-01-18 10:01:29",
+      "due": 0,
+      "paid": 10000,
+      "collector": {
+        "name": null,
+        "id": "805657176508334110"
+      },
+      "nid": "https://cdn.discordapp.com/ephemeral-attachments/1330068479952552006/1330386626072805398/Screenshot_323.png?ex=678dca99&is=678c7919&hm=7f4c5e6e10aec62f66e953e7ede41462a29901dc32b3ef0205048647b5c43307&",
+      "status": "expired"
     }
   ]
 }

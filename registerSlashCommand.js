@@ -5,8 +5,6 @@ import { REST, Routes } from "discord.js";
 
 const rest = new REST({ version: "10" }).setToken(process.env.APP_TOKEN);
 
-console.log(process.env.APP_TOKEN);
-
 const commands = [
   {
     name: "link",
@@ -112,7 +110,7 @@ const commands = [
         description: "This tax validate expired day",
         type: 10,
         required: true,
-        choose: [
+        choices: [
           { name: "7-day", value: 7 },
           { name: "3-day", value: 3 },
         ],
@@ -122,7 +120,7 @@ const commands = [
         description: "How much payer payed",
         type: 10,
         required: true,
-        choose: [
+        choices: [
           { name: "10k", value: 10000 },
           { name: "6k", value: 6000 },
         ],

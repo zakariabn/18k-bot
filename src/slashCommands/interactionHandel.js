@@ -3,6 +3,7 @@ import handlingDischarge from "./interaction/discharge.js";
 import HandlingLink from "./interaction/link.js";
 import handlingPromotion from "./interaction/promotion.js";
 import handlingSend from "./interaction/send.js";
+import handlingTurfTax from "./interaction/turfTax.js";
 import handlingRosterUpdate from "./interaction/update-roster.js";
 
 const COMMANDS = {
@@ -25,6 +26,10 @@ const COMMANDS = {
   "update-roster": {
     execute: handlingRosterUpdate,
     requiredAccessLevel: 4,
+  },
+  "collect-tax": {
+    execute: handlingTurfTax,
+    requiredAccessLevel: 1,
   },
 };
 

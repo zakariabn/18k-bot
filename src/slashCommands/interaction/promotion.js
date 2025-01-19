@@ -1,64 +1,33 @@
 import fs from "fs";
-export default function handlingPromotion(params) {
+export default function handlingPromotion(interaction) {
   // Function to promote a member
 
-  function promoteMember(memberName, newRole) {
-    // Read the existing JSON database file
-    fs.readFile("./DB/roster.json", "utf8", (err, data) => {
-      if (err) {
-        console.log("Error reading the file:", err);
-        return;
-      }
+  function promoteMember(memberName, newRole) {}
 
-      // Parse the file content into a JSON object
-      const db = JSON.parse(data);
+  async function Promotion(name, rank) {
+    await db.read();
 
-      // Find the current role of the member
-      let currentRole = null;
-      for (let role in db.roster) {
-        for (let [key, members] of Object.entries(db.roster[role])) {
-          if (members.includes(memberName)) {
-            currentRole = key;
-            break;
-          }
-        }
-      }
+    const member = db.data.members.find((member) => member.real_name === name);
 
-      if (!currentRole) {
-        console.log("Member not found in any role.");
-        return;
-      }
-
-      // Remove the member from their current role
-      const currentRoleIndex = db.roster.findIndex((role) => role[currentRole]);
-      const memberIndex =
-        db.roster[currentRoleIndex][currentRole].indexOf(memberName);
-      if (memberIndex > -1) {
-        db.roster[currentRoleIndex][currentRole].splice(memberIndex, 1);
-      }
-
-      // Add the member to the new role
-      const newRoleIndex = db.roster.findIndex((role) => role[newRole]);
-      if (newRoleIndex > -1) {
-        db.roster[newRoleIndex][newRole].push(memberName);
-      } else {
-        // If the new role doesn't exist, create it
-        const newRoleObj = {};
-        newRoleObj[newRole] = [memberName];
-        db.roster.push(newRoleObj);
-      }
-
-      // Write the updated roster back to the JSON file
-      fs.writeFile("db.json", JSON.stringify(db, null, 2), "utf8", (err) => {
-        if (err) {
-          console.log("Error writing to file:", err);
-        } else {
-          console.log(`${memberName} has been promoted to ${newRole}.`);
-        }
+    if (member) {
+      const oldRole = member.role;
+      const todaysDate = new Intl.DateTimeFormat("en-GB", {
+        timeZone: "Asia/Dhaka",
+      })
+        .format(new Date())
+        .replace(/\//g, "-");
+      // adding history to role history data
+      member.role_history.push({
+        role: "Leader",
+        promote_day: todaysDate,
       });
-    });
-  }
+      //chenging his role
+      member.role = "Leader";
+    } else {
+      console.log("Member Not found");
+    }
 
-  // Example usage
-  //   promoteMember("MrShoaibPlays", "CAPOREGIME");
+    await db.write();
+    console.log(member);
+  }
 }
