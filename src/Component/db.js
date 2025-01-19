@@ -14,6 +14,20 @@ const defaultTaxEntry = {
   status: "",
 };
 const taxDB = await JSONFilePreset("DB/turfTax.json", defaultTaxEntry);
-//setup member/roster database
 
-export { taxDB };
+//setup member/roster database
+const defaultRosterEntry = {
+  members: {
+    discord_user_id: "",
+    real_name: "",
+    role: "",
+    role_history: {
+      role: "",
+      date: "2000-01-01",
+    },
+  },
+};
+const rosterDB = await JSONFilePreset("DB/members.json", defaultRosterEntry);
+
+//exporting database........
+export { taxDB, rosterDB };

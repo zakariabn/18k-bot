@@ -7,6 +7,8 @@ export default async function handlingTurfTax(interaction) {
   const { commandName, options, channel } = interaction;
   const ExpiredTaxChannel = client.channels.cache.get("1329135806904008734");
 
+  await interaction.deferReply({ ephemeral: true });
+
   // Extracting data form option
   const name = options.getString("payer-name");
   const paidAmount = options.getNumber("paid");
@@ -87,4 +89,5 @@ export default async function handlingTurfTax(interaction) {
 
   // Send the embed
   await channel.send({ embeds: [taEntryEmbed] });
+  await interaction.editReply("New Tax Entry Added Successfully.");
 }

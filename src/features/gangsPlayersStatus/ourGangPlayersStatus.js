@@ -29,23 +29,26 @@ async function GangPlayerStatus() {
   const ourOfflinePlayers = [];
 
   try {
-    //filtering online players.
-    serverPlayers.filter((player) => {
+    if (!serverPlayers || !Array.isArray(serverPlayers)) {
+      console.log("serverPlayers is undefined or not an array.");
+      return { ourOnlinePlayers, ourOfflinePlayers };
+    }
+
+    // Online players
+    serverPlayers.forEach((player) => {
       if (ourPlayers.includes(player.name)) {
         ourOnlinePlayers.push(player.name);
       }
     });
 
-    //finding offline players
-    ourPlayers.filter((player) => {
-      if (ourOnlinePlayers.includes(player)) {
-        return;
-      } else {
+    // Offline players
+    ourPlayers.forEach((player) => {
+      if (!ourOnlinePlayers.includes(player)) {
         ourOfflinePlayers.push(player);
       }
     });
   } catch (error) {
-    console.log(error);
+    console.error("Error in GangPlayerStatus:", error);
   }
 
   return { ourOnlinePlayers, ourOfflinePlayers };

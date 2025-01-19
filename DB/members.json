@@ -1,8 +1,8 @@
 {
   "members": [
     {
-      "discord_user_id": "123456789012345678",
-      "real_name": "Tom Riddle",
+      "discord_user_id": "778975123397935135",
+      "real_name": "! Lord V0LD3M0RT乛YT👑",
       "role": "LEADER",
       "role_history": [
         {
@@ -12,9 +12,9 @@
       ]
     },
     {
-      "discord_user_id": "234567890123456789",
-      "real_name": "Shoaib",
-      "role": "Leader",
+      "discord_user_id": "964442000931844176",
+      "real_name": "Makarov Ghost",
+      "role": "CAPOREGIME",
       "role_history": [
         {
           "role": "CO-LEADER",
@@ -27,9 +27,9 @@
       ]
     },
     {
-      "discord_user_id": "345678901234567890",
+      "discord_user_id": "805657176508334110",
       "real_name": "Polo",
-      "role": "CO-LEADER",
+      "role": "DISCHARGED",
       "role_history": [
         {
           "role": "CO-LEADER",
@@ -38,7 +38,7 @@
       ]
     },
     {
-      "discord_user_id": "456789012345678901",
+      "discord_user_id": "726739687309312061",
       "real_name": "Samrat",
       "role": "STREET BOSS",
       "role_history": [
@@ -49,8 +49,8 @@
       ]
     },
     {
-      "discord_user_id": "567890123456789012",
-      "real_name": "Backy",
+      "discord_user_id": "1222247506889408572",
+      "real_name": "Dollar Vai",
       "role": "ADVISER",
       "role_history": [
         {
@@ -60,8 +60,8 @@
       ]
     },
     {
-      "discord_user_id": "678901234567890123",
-      "real_name": "Saidur",
+      "discord_user_id": "726836589963247666",
+      "real_name": "Savage",
       "role": "CAPOREGIME",
       "role_history": [
         {
@@ -71,8 +71,8 @@
       ]
     },
     {
-      "discord_user_id": "789012345678901234",
-      "real_name": "Shesher",
+      "discord_user_id": "384585385033859072",
+      "real_name": "Envy",
       "role": "CHIEF OF ENFORCER",
       "role_history": [
         {
@@ -82,18 +82,7 @@
       ]
     },
     {
-      "discord_user_id": "890123456789012345",
-      "real_name": "Ovibosd",
-      "role": "CHIEF OF ENFORCER",
-      "role_history": [
-        {
-          "role": "CHIEF OF ENFORCER",
-          "date": "2025-01-01"
-        }
-      ]
-    },
-    {
-      "discord_user_id": "901234567890123456",
+      "discord_user_id": "995943863569104927",
       "real_name": "Rocky",
       "role": "ENFORCER",
       "role_history": [
@@ -104,8 +93,8 @@
       ]
     },
     {
-      "discord_user_id": "012345678901234567",
-      "real_name": "Farshi",
+      "discord_user_id": "899574126719680512",
+      "real_name": "Salman Farshi",
       "role": "ENFORCER",
       "role_history": [
         {
@@ -115,7 +104,7 @@
       ]
     },
     {
-      "discord_user_id": "112233445566778899",
+      "discord_user_id": "1127691132806103172",
       "real_name": "Saru",
       "role": "ENFORCER",
       "role_history": [
@@ -126,7 +115,7 @@
       ]
     },
     {
-      "discord_user_id": "223344556677889900",
+      "discord_user_id": "417343922172330005",
       "real_name": "Rasin",
       "role": "SOLDIER",
       "role_history": [

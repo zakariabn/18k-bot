@@ -1,33 +1,49 @@
 import fs from "fs";
-export default function handlingPromotion(interaction) {
+import { rosterDB } from "../../Component/db.js";
+import moment from "moment-timezone";
+
+export default async function handlingPromotion(interaction) {
+  const { commandName, options, channel } = interaction;
+  await interaction.deferReply({ ephemeral: true });
+
   // Function to promote a member
 
-  function promoteMember(memberName, newRole) {}
+  const user = options.getUser("user_option");
+  const rank = options.getString("rank");
+  const promotionMessage = options / getString("end_message");
 
-  async function Promotion(name, rank) {
-    await db.read();
+  //load Roster database
+  const db = rosterDB;
+  await db.read();
 
-    const member = db.data.members.find((member) => member.real_name === name);
+  // finding target member by there user name
+  const member = db.data.members.find((m) => m.discord_user_id === user.id);
 
-    if (member) {
-      const oldRole = member.role;
-      const todaysDate = new Intl.DateTimeFormat("en-GB", {
-        timeZone: "Asia/Dhaka",
-      })
-        .format(new Date())
-        .replace(/\//g, "-");
-      // adding history to role history data
-      member.role_history.push({
-        role: "Leader",
-        promote_day: todaysDate,
-      });
-      //chenging his role
-      member.role = "Leader";
-    } else {
-      console.log("Member Not found");
-    }
-
-    await db.write();
-    console.log(member);
+  if (!member) {
+    await interaction.editReply(
+      `<@${user?.id || "user"}> not found. Request failed`
+    );
+    console.log("member not fond");
+    return;
   }
+
+  const oldRole = member.role;
+  const today = moment.tz("Asia/Dhaka").format("YYYY-MM-DD HH:mm:ss");
+
+  member.role_history.push({
+    role: rank,
+    promote_day: today,
+  });
+
+  //chenging his role
+  member.role = rank;
+  await db.write();
+
+  //sending promotion message to channel
+
+  const format = `<@${user.id}>  **Congratulations** 🎉 🎉 🎉 🎉 \nYou have been promoted to **${rank}** of **The 18K Sin's** \n> Your name tag is ${promotionMessage}`;
+  await channel.send(format);
+  await interaction.editReply(
+    `<@${user.id}> Promoted to **${rank}**. And roster is updated.`
+  );
 }

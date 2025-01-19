@@ -4,6 +4,7 @@ const authorizedRoleIds = [
     authRoleId: [
       { name: "18k bot access", id: "1306285331158667306", access_level: 4 },
       { name: "the 18k sins", id: "1131652913643651092", access_level: 1 },
+      { name: "fiveM info", id: "1330422738984370208", access_level: 2 },
     ],
   },
   {
