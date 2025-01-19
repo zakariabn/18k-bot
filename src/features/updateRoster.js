@@ -44,12 +44,31 @@ export default async function UpdateRoster() {
     }, {}); // Start with an empty object as the accumulator
   }
 
-  // Function to format grouped data into a string
   function formatRoleData(groupedData) {
+    // Define the role order you want
+    const roleOrder = [
+      "LEADER",
+      "CO-LEADER",
+      "ADVISER",
+      "STREET BOSS",
+      "CAPOREGIME",
+      "CHIEF OF ENFORCER",
+      "ENFORCER",
+      "SOLDIER",
+      "ASSOCIATES",
+    ];
+
     let formattedString = "";
-    Object.entries(groupedData).forEach(([role, names]) => {
-      formattedString += `**${role}**\n* ${names.join("\n* ")}\n\n`;
+
+    // Loop through the roles in the desired order
+    roleOrder.forEach((role) => {
+      if (groupedData[role]) {
+        formattedString += `**${role.toUpperCase()}**\n* ${groupedData[
+          role
+        ].join("\n* ")}\n\n`;
+      }
     });
+
     return formattedString;
   }
 

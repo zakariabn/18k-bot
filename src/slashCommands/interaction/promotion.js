@@ -1,6 +1,7 @@
 import fs from "fs";
 import { rosterDB } from "../../Component/db.js";
 import moment from "moment-timezone";
+import UpdateRoster from "../../features/updateRoster.js";
 
 export default async function handlingPromotion(interaction) {
   const { commandName, options, channel } = interaction;
@@ -38,6 +39,10 @@ export default async function handlingPromotion(interaction) {
   //chenging his role
   member.role = rank;
   await db.write();
+
+  //updating roster
+  await db.read();
+  await UpdateRoster();
 
   //sending promotion message to channel
 

@@ -6,7 +6,7 @@
       "role": "LEADER",
       "role_history": [
         {
-          "role": "Leader",
+          "role": "LEADER",
           "date": "2025-01-01"
         }
       ]
@@ -29,7 +29,7 @@
     {
       "discord_user_id": "805657176508334110",
       "real_name": "Polo",
-      "role": "DISCHARGED",
+      "role": "CO-LEADER",
       "role_history": [
         {
           "role": "CO-LEADER",
