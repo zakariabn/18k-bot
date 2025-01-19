@@ -147,6 +147,48 @@ const commands = [
       },
     ],
   },
+  {
+    name: "add-roster",
+    description: "Use this for adding a member to roster list",
+    options: [
+      {
+        name: "member", // Select a user
+        description: "Select a user to add",
+        type: 6, // USER type
+        required: true,
+      },
+      {
+        name: "ign", // Optional end message for promotion
+        type: 3, // STRING
+        description: "Input his/her in-game name",
+        required: true,
+      },
+      {
+        name: "role", // Reason for promotion
+        description: "Select rank",
+        type: 3, // STRING
+        required: true,
+        // Add choices for the promotion reason
+        choices: [
+          { name: "Leader", value: "Leader" },
+          { name: "CO-LEADER", value: "CO-LEADER" },
+          { name: "STREET BOSS", value: "STREET BOSS" },
+          { name: "ADVISER", value: "ADVISER" },
+          { name: "CAPOREGIME", value: "CAPOREGIME" },
+          { name: "CHIEF OF ENFORCER", value: "CHIEF OF ENFORCER" },
+          { name: "ENFORCER", value: "ENFORCER" },
+          { name: "SOLDIER", value: "SOLDIER" },
+          { name: "ASSOCIATES", value: "ASSOCIATES" },
+        ],
+      },
+      {
+        name: "end_message", // Optional end message for promotion
+        type: 3, // STRING
+        description: "Optional end message for promotion",
+        required: false,
+      },
+    ],
+  },
 ];
 
 (async () => {

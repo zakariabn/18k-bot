@@ -1,4 +1,6 @@
 import auth from "../auth/authentication.js";
+import handlingAddRoster from "./interaction/addRoster.js";
+
 import handlingDischarge from "./interaction/discharge.js";
 import HandlingLink from "./interaction/link.js";
 import handlingPromotion from "./interaction/promotion.js";
@@ -7,6 +9,10 @@ import handlingTurfTax from "./interaction/turfTax.js";
 import handlingRosterUpdate from "./interaction/update-roster.js";
 
 const COMMANDS = {
+  "collect-tax": {
+    execute: handlingTurfTax,
+    requiredAccessLevel: 1,
+  },
   link: {
     execute: HandlingLink,
     requiredAccessLevel: 1,
@@ -23,13 +29,13 @@ const COMMANDS = {
     execute: handlingDischarge,
     requiredAccessLevel: 4,
   },
+  "add-roster": {
+    execute: handlingAddRoster,
+    requiredAccessLevel: 4,
+  },
   "update-roster": {
     execute: handlingRosterUpdate,
     requiredAccessLevel: 4,
-  },
-  "collect-tax": {
-    execute: handlingTurfTax,
-    requiredAccessLevel: 1,
   },
 };
 
