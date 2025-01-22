@@ -2,139 +2,185 @@
   "members": [
     {
       "discord_user_id": "778975123397935135",
-      "real_name": "! Lord V0LD3M0RT乛YT👑",
+      "steam_name": "Lord VOLDEMORT",
+      "city_present_time": "",
+      "ign": "Lord V0LD3M0RT",
       "role": "LEADER",
       "role_history": [
         {
           "role": "LEADER",
-          "date": "2025-01-01"
+          "promote_date": "2025-01-01"
         }
-      ]
+      ],
+      "online_time": "0h 9m 44s"
     },
     {
       "discord_user_id": "964442000931844176",
-      "real_name": "Makarov Ghost",
+      "ign": "Makarov Ghost",
+      "steam_name": "MrShoaibPlays",
+      "city_present_time": "",
       "role": "CAPOREGIME",
       "role_history": [
         {
           "role": "CO-LEADER",
-          "date": "2025-01-01"
-        },
-        {
-          "role": "Leader",
-          "promote_day": "19-01-2025"
+          "promote_date": "2025-01-01"
         }
-      ]
+      ],
+      "online_time": "0h 9m 44s"
     },
     {
       "discord_user_id": "805657176508334110",
-      "real_name": "Polo",
+      "ign": "POLO",
+      "steam_name": "POLO",
+      "city_present_time": "",
       "role": "CO-LEADER",
       "role_history": [
         {
           "role": "CO-LEADER",
-          "date": "2025-01-01"
+          "promote_date": "2025-01-01"
         }
       ]
     },
     {
       "discord_user_id": "726739687309312061",
-      "real_name": "Samrat",
+      "steam_name": "Samrat",
+      "city_present_time": "",
+      "ign": "Samrat",
       "role": "STREET BOSS",
       "role_history": [
         {
           "role": "STREET BOSS",
-          "date": "2025-01-01"
+          "promote_date": "2025-01-01"
         }
       ]
     },
     {
       "discord_user_id": "1222247506889408572",
-      "real_name": "Dollar Vai",
+      "ign": "Dollar Vai",
+      "steam_name": "imran597687",
+      "city_present_time": "",
       "role": "ADVISER",
       "role_history": [
         {
           "role": "ADVISER",
-          "date": "2025-01-01"
+          "promote_date": "2025-01-01"
         }
       ]
     },
     {
       "discord_user_id": "726836589963247666",
-      "real_name": "Savage",
+      "steam_name": "Jobayed_Hossan_GG",
+      "city_present_time": "",
+      "ign": "Savage",
       "role": "CAPOREGIME",
       "role_history": [
         {
           "role": "CAPOREGIME",
-          "date": "2025-01-01"
+          "promote_date": "2025-01-01"
         }
-      ]
+      ],
+      "online_time": "0h 0m 0s"
     },
     {
       "discord_user_id": "384585385033859072",
-      "real_name": "Envy",
+      "steam_name": "Hossain Ovi",
+      "city_present_time": "",
+      "ign": "Envy",
       "role": "CHIEF OF ENFORCER",
       "role_history": [
         {
           "role": "CHIEF OF ENFORCER",
-          "date": "2025-01-01"
+          "promote_date": "2025-01-01"
         }
       ]
     },
     {
       "discord_user_id": "995943863569104927",
-      "real_name": "Rocky",
+      "steam_name": "Ro Cky",
+      "city_present_time": "",
+      "ign": "Rocky",
       "role": "ENFORCER",
       "role_history": [
         {
           "role": "ENFORCER",
-          "date": "2025-01-01"
+          "promote_date": "2025-01-01"
         }
       ]
     },
     {
       "discord_user_id": "899574126719680512",
-      "real_name": "Salman Farshi",
+      "steam_name": "456comeon",
+      "city_present_time": "",
+      "ign": "Salman Farshi",
       "role": "ENFORCER",
       "role_history": [
         {
           "role": "ENFORCER",
-          "date": "2025-01-01"
+          "promote_date": "2025-01-01"
         }
-      ]
+      ],
+      "online_time": "0h 9m 44s"
     },
     {
       "discord_user_id": "1127691132806103172",
-      "real_name": "Saru",
+      "ign": "Saru",
+      "steam_name": "mr.saru",
+      "city_present_time": "",
       "role": "ENFORCER",
       "role_history": [
         {
           "role": "ENFORCER",
-          "date": "2025-01-01"
+          "promote_date": "2025-01-01"
         }
       ]
     },
     {
       "discord_user_id": "417343922172330005",
-      "real_name": "Rasin",
+      "ign": "Rasin",
+      "steam_name": "Rasin Ra",
+      "city_present_time": "",
       "role": "SOLDIER",
       "role_history": [
         {
           "role": "SOLDIER",
-          "date": "2025-01-01"
+          "promote_date": "2025-01-01"
         }
       ]
     },
     {
       "discord_user_id": "334455667788990011",
-      "real_name": "Hunny",
+      "ign": "Hunny",
+      "steam_name": "",
+      "city_present_time": "",
       "role": "ASSOCIATES",
       "role_history": [
         {
           "role": "ASSOCIATES",
-          "date": "2025-01-01"
+          "promote_date": "2025-01-01"
         }
       ]
+    },
+    {
+      "discord_user_id": "1308711640392536064",
+      "steam_name": "",
+      "city_present_time": "",
+      "ign": "Crabie",
+      "role": "ASSOCIATES",
+      "role_history": {
+        "role": "ASSOCIATES",
+        "promote_date": "2025-01-21 17:26:18"
+      }
+    },
+    {
+      "discord_user_id": "1213542315176493117",
+      "steam_name": "Ahanaf243",
+      "city_present_time": "",
+      "ign": "MikaSa",
+      "role": "SOLDIER",
+      "role_history": {
+        "role": "SOLDIER",
+        "promote_date": "2025-01-01"
+      }
     }
   ]
 }

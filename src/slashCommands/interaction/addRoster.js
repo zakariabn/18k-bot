@@ -8,6 +8,7 @@ export default async function handlingAddRoster(interaction) {
 
   const member = options.getUser("member");
   const name = options.getString("ign");
+  const steamName = options.getString("steam_name");
   const role = options.getString("role");
   const addMessage = options.getString("end_message");
 
@@ -17,7 +18,9 @@ export default async function handlingAddRoster(interaction) {
   // collection data from option.
   const rosterData = {
     discord_user_id: member?.id,
-    real_name: name,
+    ign: name,
+    steam_name: "",
+    city_present_time: "",
     role: role,
     role_history: {
       role: role,

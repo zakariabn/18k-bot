@@ -49,14 +49,6 @@ const commands = [
   {
     name: "update-roster",
     description: "Repeats what you say.",
-    // options: [
-    //   {
-    //     name: "text", // Correct: lowercase and alphanumeric
-    //     type: 3, // STRING
-    //     description: "Text to repeat",
-    //     required: true,
-    //   },
-    // ],
   },
   // Promotion command
   {
@@ -164,6 +156,12 @@ const commands = [
         required: true,
       },
       {
+        name: "steam_name", // Optional end message for promotion
+        type: 3, // STRING
+        description: "Input his/her steam-name",
+        required: true,
+      },
+      {
         name: "role", // Reason for promotion
         description: "Select rank",
         type: 3, // STRING
@@ -189,6 +187,30 @@ const commands = [
       },
     ],
   },
+  {
+    name: "update-member-info",
+    description: "Use this for updating members info",
+    options: [
+      {
+        name: "member", // Select a user
+        description: "Select a user to add",
+        type: 6, // USER type
+        required: true,
+      },
+      {
+        name: "ign",
+        type: 3, // STRING
+        description: "Input his/her in-game name",
+        required: true,
+      },
+      {
+        name: "steam_name",
+        type: 3, // STRING
+        description: "Input his/her steam-name",
+        required: true,
+      },
+    ],
+  },
 ];
 
 (async () => {
@@ -206,3 +228,22 @@ const commands = [
     console.error(error);
   }
 })();
+
+// export const data = new SlashCommandBuilder()
+//     .setName('example')
+//     .setDescription('Example command with autocomplete')
+//     .addStringOption(option =>
+//         option.setName('input')
+//             .setDescription('Choose or type your input')
+//             .setAutocomplete(true)
+//             .setRequired(true)
+//     );
+
+// export const autocomplete = async (interaction) => {
+//     const focusedValue = interaction.options.getFocused();
+//     const choices = ['Option 1', 'Option 2', 'Option 3'];
+//     const filtered = choices.filter(choice => choice.startsWith(focusedValue));
+//     await interaction.respond(
+//         filtered.map(choice => ({ name: choice, value: choice }))
+//     );
+// };

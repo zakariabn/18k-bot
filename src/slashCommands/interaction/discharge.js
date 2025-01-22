@@ -20,6 +20,12 @@ export default async function handlingDischarge(interaction) {
 
   const member = db.data.members.find((m) => m.discord_user_id === user.id);
 
+  // if (!targetedMember) {
+  //   console.log(`${member.userName} not found. Update member failed`);
+  //   await interaction.editReply(`<@${member.id}> isn't in the roster. Use /add-roster to add.`)
+  //   return
+  // }
+
   if (member) {
     member.role = "DISCHARGED";
 

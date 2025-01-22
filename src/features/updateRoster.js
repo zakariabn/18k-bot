@@ -39,7 +39,7 @@ export default async function UpdateRoster() {
       }
 
       // Add the member's name to the role group
-      acc[role].push(member.real_name);
+      acc[role].push(member.ign);
       return acc;
     }, {}); // Start with an empty object as the accumulator
   }
