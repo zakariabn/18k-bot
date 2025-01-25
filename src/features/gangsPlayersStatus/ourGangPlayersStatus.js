@@ -1,165 +1,193 @@
 import { EmbedBuilder } from "discord.js";
 import client from "../../../bot.js";
 import { FetchingServerData } from "../../Component/functionsComponent.js";
-import { rosterDB } from "../../Component/db.js";
+import { rosterDB, playersTimeDB } from "../../Component/db.js";
 import moment from "moment-timezone";
 
-const onlineTimeTracker = {}; // Track online time in memory
-let db = rosterDB; // Load the database once
+const CHANNEL_ID = "1306282347569873087"; // Replace with your channel ID
+const ASH_COLOR = "#778899"; // Ash-grey color
+const LOGO_URL = "https://i.ibb.co.com/Zd80Pwg/18k-tarf-bg-logo-3.png"; // Replace with your logo URL
+const UPDATE_INTERVAL = 10000; // 10 seconds
 
-// Helper to load database
-async function loadDatabase() {
+// Load timers and message ID from the database
+async function loadTimers() {
+  const db = playersTimeDB;
   await db.read();
-  return db.data.members;
+  if (!db.data.playerTimers) {
+    db.data.playerTimers = {}; // Initialize if it doesn't exist
+  }
+  if (!db.data.messageId) {
+    db.data.messageId = "1306907750520979477"; // Initialize if it doesn't exist
+  }
+  return db.data;
 }
 
-// Helper to save database
-async function saveDatabase() {
+// Save timers and message ID to the database
+async function saveTimers(data) {
+  const db = playersTimeDB;
+  db.data = data;
   await db.write();
 }
 
-// Convert total seconds to "Hh Mm Ss" format and return as a string
-function formatTime(totalSeconds) {
-  const hours = Math.floor(totalSeconds / 3600);
-  const minutes = Math.floor((totalSeconds % 3600) / 60);
-  const seconds = totalSeconds % 60;
-  return `${hours}h ${minutes}m ${seconds}s`;
+// Helper function to format time in HH:mm:ss
+function formatTime(milliseconds) {
+  const seconds = Math.floor(milliseconds / 1000);
+  const hours = Math.floor(seconds / 3600);
+  const minutes = Math.floor((seconds % 3600) / 60);
+  const secs = seconds % 60;
+  return `${hours}h ${minutes}m ${secs}s`;
 }
 
-// Update online time for players
-function updateOnlineTime(onlinePlayers) {
-  const now = moment();
-  onlinePlayers.forEach((playerName) => {
-    if (!onlineTimeTracker[playerName]) {
-      onlineTimeTracker[playerName] = { startTime: now, total: 0 };
-    } else {
-      const player = onlineTimeTracker[playerName];
-      player.total += now.diff(player.startTime, "seconds");
-      player.startTime = now; // Reset start time
-    }
-  });
-}
-
-// Get player status from the database and server data
-async function getPlayerStatus() {
-  const serverData = await FetchingServerData();
-  const serverPlayers = serverData?.Data?.players || [];
-  const members = await loadDatabase();
-
-  const onlinePlayers = [];
-  const offlinePlayers = [];
-  const memberSteamNames = new Set(members.map((m) => m.steam_name));
-
-  serverPlayers.forEach((player) => {
-    if (memberSteamNames.has(player.name)) {
-      onlinePlayers.push(player.name); // Collect Steam names of online players
-    }
-  });
-
-  members.forEach((member) => {
-    if (!onlinePlayers.includes(member.steam_name)) {
-      offlinePlayers.push(member.steam_name);
-    }
-  });
-
-  return { onlinePlayers, offlinePlayers, members };
-}
-
-// Save time to the database as "Hh Mm Ss"
-async function saveOnlineTimeToDb(onlinePlayers) {
-  onlinePlayers.forEach((steamName) => {
-    const member = db.data.members.find((m) => m.steam_name === steamName);
-    if (member) {
-      const totalSeconds = onlineTimeTracker[steamName]?.total || 0;
-      const formattedTime = formatTime(totalSeconds);
-      member.online_time = formattedTime; // Save time as "Hh Mm Ss"
-    }
-  });
-  await saveDatabase();
-}
-
-// Send or update the embed message
-async function updateEmbed(
-  channel,
-  embedMessage,
-  onlinePlayers,
-  offlinePlayers,
-  members
-) {
-  // Map online players with their formatted total online time and display their IGN
-  const onlineStatuses = onlinePlayers.map((steamName) => {
-    const member = members.find((m) => m.steam_name === steamName);
-    const ign = member ? member.ign : steamName; // Get IGN from database or use Steam name if not found
-    const totalSeconds = onlineTimeTracker[steamName]?.total || 0;
-    const formattedTime = formatTime(totalSeconds);
-    return `${ign} - ${formattedTime}`; // Display IGN with total online time
-  });
-
-  // Map offline players with their IGN
-  const offlineStatuses = offlinePlayers.map((steamName) => {
-    const member = members.find((m) => m.steam_name === steamName);
-    const ign = member ? member.ign : steamName; // Get IGN from database or use Steam name if not found
-    return ign; // Only display IGN for offline players
-  });
-
-  const embed = new EmbedBuilder()
-    .setColor("#778899")
+// Create an embed message with player status
+async function createEmbed(ourOnlinePlayers, ourOfflinePlayers) {
+  return new EmbedBuilder()
+    .setColor(ASH_COLOR)
     .setTitle("***THE 18K SIN's*** **Player Status**")
     .setDescription("Status updates every 10 seconds.")
     .addFields(
+      { name: "\u200B", value: "\u200B", inline: false }, // Blank field for spacing
       {
         name: "**💚 Online Players**",
-        value: `\`\`\`➢ ${onlineStatuses.join("\n➢ ") || "None"} \`\`\``,
+        value:
+          ourOnlinePlayers.length > 0
+            ? `\`\`\`${ourOnlinePlayers
+                .map((p) => `➢ ${p.ign} - ${p.onlineTime}`)
+                .join("\n")} \`\`\``
+            : "```None```",
         inline: false,
       },
       {
         name: "**❤️ Offline Players**",
-        value: `\`\`\`➢ ${offlineStatuses.join("\n➢ ") || "None"} \`\`\``,
+        value:
+          ourOfflinePlayers.length > 0
+            ? `\`\`\`${ourOfflinePlayers
+                .map((p) => `➢ ${p.ign}`)
+                .join("\n")} \`\`\``
+            : "```None```",
         inline: false,
       }
     )
-    .setImage("https://i.ibb.co.com/Zd80Pwg/18k-tarf-bg-logo-3.png")
+    .setImage(LOGO_URL)
     .setTimestamp();
-
-  await embedMessage.edit({ embeds: [embed] }).catch(console.error);
 }
 
-// Main function to send the player status
+// Check player status and update timers
+async function GangPlayerStatus() {
+  const serverData = await FetchingServerData();
+  const serverPlayers = serverData?.Data?.players;
+
+  const ourOnlinePlayers = [];
+  const ourOfflinePlayers = [];
+
+  try {
+    if (!serverPlayers || !Array.isArray(serverPlayers)) {
+      console.log("serverPlayers is undefined or not an array.");
+      return { ourOnlinePlayers, ourOfflinePlayers };
+    }
+
+    // Load roster database
+    const roster = rosterDB;
+    await roster.read();
+
+    // Get members from the database
+    const members = roster.data?.members || [];
+    const memberMap = new Map(
+      members.map((member) => [member.steam_name, member])
+    );
+
+    // Load current timers and message ID
+    const { playerTimers } = await loadTimers();
+
+    // Check online status and update timers
+    serverPlayers.forEach((player) => {
+      const member = memberMap.get(player.name);
+      if (member) {
+        // If player is online and not already being tracked, start the timer
+        if (!playerTimers[player.name]) {
+          playerTimers[player.name] = {
+            startTime: new Date().toISOString(),
+            elapsedTime: 0,
+          };
+        }
+
+        // Calculate elapsed time
+        const timer = playerTimers[player.name];
+        const startTime = new Date(timer.startTime);
+        const elapsedTime = new Date() - startTime + timer.elapsedTime;
+
+        ourOnlinePlayers.push({
+          ign: member.ign,
+          onlineTime: formatTime(elapsedTime),
+        });
+      }
+    });
+
+    // Check offline players
+    members.forEach((member) => {
+      const isOnline = serverPlayers.some((p) => p.name === member.steam_name);
+      if (!isOnline) {
+        // If player is offline and was being tracked, stop the timer
+        if (playerTimers[member.steam_name]) {
+          const timer = playerTimers[member.steam_name];
+          const startTime = new Date(timer.startTime);
+          timer.elapsedTime += new Date() - startTime;
+          delete playerTimers[member.steam_name]; // Remove from active timers
+        }
+
+        ourOfflinePlayers.push({
+          ign: member.ign,
+          onlineTime: formatTime(
+            playerTimers[member.steam_name]?.elapsedTime || 0
+          ),
+        });
+      }
+    });
+
+    // Save updated timers to the database
+    await saveTimers({ playerTimers, messageId: playersTimeDB.data.messageId });
+  } catch (error) {
+    console.error("Error in GangPlayerStatus:", error);
+  }
+
+  return { ourOnlinePlayers, ourOfflinePlayers };
+}
+
+// Main function to send and update player status
 export default async function SendGangPlayerStatus() {
-  const channel = client.channels.cache.get("1306282347569873087");
+  const channel = client.channels.cache.get(CHANNEL_ID);
 
-  // Fetch the last sent message by the bot
-  let embedMessage = await channel.messages
-    .fetch({ limit: 1 })
-    .then((messages) =>
-      messages.find((msg) => msg.author.id === client.user.id)
-    )
-    .catch(console.error);
+  if (!channel) {
+    console.error("Channel not found!");
+    return;
+  }
 
-  // If no message exists, send a new one
+  // Load timers and message ID
+  const { playerTimers, messageId } = await loadTimers();
+
+  let embedMessage;
+  if (messageId) {
+    // Fetch the existing message
+    embedMessage = await channel.messages.fetch(messageId).catch(console.error);
+  }
+
   if (!embedMessage) {
+    // Send a new message if the existing one is not found
     embedMessage = await channel
       .send({ content: "Loading player status..." })
       .catch(console.error);
+    // Save the new message ID
+    await saveTimers({ playerTimers, messageId: embedMessage.id });
   }
 
-  // Periodic updates
+  // Update the embed message every 10 seconds
   setInterval(async () => {
-    const { onlinePlayers, offlinePlayers, members } = await getPlayerStatus();
+    try {
+      const { ourOnlinePlayers, ourOfflinePlayers } = await GangPlayerStatus();
+      const embed = await createEmbed(ourOnlinePlayers, ourOfflinePlayers);
 
-    // Update online time
-    updateOnlineTime(onlinePlayers);
-
-    // Save online time to the database periodically
-    await saveOnlineTimeToDb(onlinePlayers);
-
-    // Update the embed message
-    await updateEmbed(
-      channel,
-      embedMessage,
-      onlinePlayers,
-      offlinePlayers,
-      members
-    );
-  }, 10000);
+      await embedMessage.edit({ embeds: [embed] }).catch(console.error);
+    } catch (error) {
+      console.error("Error updating player status:", error);
+    }
+  }, UPDATE_INTERVAL);
 }

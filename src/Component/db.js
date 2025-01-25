@@ -1,33 +1,19 @@
 import { JSONFilePreset } from "lowdb/node";
 
 //setup tax database
-const defaultTaxEntry = {
-  tax_id: "",
-  payer_name: "",
-  b_name: "",
-  valid: "",
-  expired_date: "",
-  due: "",
-  paid: "",
-  collector: { name: "", id: "" },
-  nid: "",
-  status: "",
-};
+const defaultTaxEntry = { last_tax_code: 0, taxes: [{}] };
 const taxDB = await JSONFilePreset("DB/turfTax.json", defaultTaxEntry);
 
 //setup member/roster database
-const defaultRosterEntry = {
-  members: {
-    discord_user_id: "",
-    real_name: "",
-    role: "",
-    role_history: {
-      role: "",
-      date: "2000-01-01",
-    },
-  },
-};
+const defaultRosterEntry = { members: [{}] };
 const rosterDB = await JSONFilePreset("DB/members.json", defaultRosterEntry);
 
+//setup playerTimers database
+const defaultPlayersTimeEntry = { playerTimers: {} };
+const playersTimeDB = await JSONFilePreset(
+  "DB/playerTimers.json",
+  defaultPlayersTimeEntry
+);
+
 //exporting database........
-export { taxDB, rosterDB };
+export { taxDB, rosterDB, playersTimeDB };
