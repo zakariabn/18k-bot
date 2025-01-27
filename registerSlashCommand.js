@@ -80,9 +80,9 @@ const commands = [
         ],
       },
       {
-        name: "end_message", // Optional end message for promotion
+        name: "name-tag", // Optional end message for promotion
         type: 3, // STRING
-        description: "Optional end message for promotion",
+        description: "name-tag of this member.",
         required: false,
       },
     ],

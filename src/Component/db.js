@@ -8,12 +8,9 @@ const taxDB = await JSONFilePreset("DB/turfTax.json", defaultTaxEntry);
 const defaultRosterEntry = { members: [{}] };
 const rosterDB = await JSONFilePreset("DB/members.json", defaultRosterEntry);
 
-//setup playerTimers database
-const defaultPlayersTimeEntry = { playerTimers: {} };
-const playersTimeDB = await JSONFilePreset(
-  "DB/playerTimers.json",
-  defaultPlayersTimeEntry
-);
+//setup discord role database
+const defaultRolesEntry = { roles: [] };
+const rolesDB = await JSONFilePreset("DB/roles.json", defaultRolesEntry);
 
 //exporting database........
-export { taxDB, rosterDB, playersTimeDB };
+export { taxDB, rosterDB, rolesDB };

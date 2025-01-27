@@ -1,12 +1,12 @@
 import moment from "moment-timezone";
-import { rosterDB } from "../../Component/db.js";
+import { rosterDB, rolesDB } from "../../Component/db.js";
 import UpdateRoster from "../../features/updateRoster.js";
 
 export default async function handlingAddRoster(interaction) {
   const { commandName, options, channel } = interaction;
   await interaction.deferReply({ ephemeral: true });
 
-  const member = options.getUser("member");
+  const user = options.getUser("member");
   const name = options.getString("ign");
   const steamName = options.getString("steam_name");
   const role = options.getString("role");
@@ -17,24 +17,43 @@ export default async function handlingAddRoster(interaction) {
 
   // collection data from option.
   const rosterData = {
-    discord_user_id: member?.id,
+    discord_user_id: user?.id,
     ign: name,
-    steam_name: "",
-    city_present_time: "",
+    steam_name: steamName,
     role: role,
-    role_history: {
-      role: role,
-      promote_date: today,
-    },
+    role_history: [
+      {
+        role: role,
+        promote_date: today,
+      },
+    ],
   };
+
+  if (
+    !interaction.member.permissions.has(PermissionsBitField.Flags.ManageRoles)
+  ) {
+    return interaction.editReply({
+      content: "You don't have permission to manage roles.",
+      ephemeral: true,
+    });
+  }
+
+  //giving discord role
+  const tksRoles = await rolesDB.read();
+
+  const assignedRoleId = tksRoles.data.roles.find((r) => r.name === role);
+  if (assignedRoleId) {
+    await user.roles.add(tksRoles.data.tks_role);
+    await user.roles.add(assignedRoleId.id);
+  }
 
   // 2 format.
   const applicationResultFormat = ` ${"```"}  Application Result  ${"```"} \n\n> <@${
-    member?.id
+    user?.id
   }>\n\n > <:accepted:1282817212910014504> **Your application has been accepted.** \n> You are selected as an <@&1185923287767846923> of THE 18K SIN’S. Best wishes. Wait for your interview. 💖`;
 
   const recruitFormat = `${"```"}  Recruit  ${"```"} \n\n> <@${
-    member?.id
+    user?.id
   }>\n > <:accepted:1282817212910014504> **You are recruited as a **${role}** of THE 18K SIN'S.** \n> Welcome to the family. 💐💐💐`;
 
   // Sending a recruitment message to this chanel.
@@ -56,5 +75,5 @@ export default async function handlingAddRoster(interaction) {
   await db.read();
   await UpdateRoster();
 
-  await interaction.editReply(`<@${member?.id}> is Added to Roster`);
+  await interaction.editReply(`<@${user?.id}> is Added to Roster`);
 }

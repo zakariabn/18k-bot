@@ -1,4 +1,4 @@
-import { rosterDB } from "../../Component/db.js";
+import { rosterDB, rolesDB } from "../../Component/db.js";
 import UpdateRoster from "../../features/updateRoster.js";
 
 export default async function handlingDischarge(interaction) {
@@ -26,6 +26,16 @@ export default async function handlingDischarge(interaction) {
   //   return
   // }
 
+  //Removing discord role
+  const tksRoles = await rolesDB.read();
+  const currentRole = member.role;
+  const currentRoleId = tksRoles.data.roles.find((r) => r.name === currentRole);
+  if (currentRoleId) {
+    await user.roles.remove(tksRoles.data.tks_role);
+    await user.roles.remove(currentRoleId.id);
+  }
+
+  // updating db
   if (member) {
     member.role = "DISCHARGED";
 

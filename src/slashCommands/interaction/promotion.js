@@ -1,5 +1,5 @@
 import fs from "fs";
-import { rosterDB } from "../../Component/db.js";
+import { rosterDB, rolesDB } from "../../Component/db.js";
 import moment from "moment-timezone";
 import UpdateRoster from "../../features/updateRoster.js";
 
@@ -11,7 +11,7 @@ export default async function handlingPromotion(interaction) {
 
   const user = options.getUser("user_option");
   const rank = options.getString("rank");
-  const promotionMessage = options / getString("end_message");
+  const promotionMessage = options.getString("name-tag");
 
   //load Roster database
   const db = rosterDB;
@@ -28,7 +28,17 @@ export default async function handlingPromotion(interaction) {
     return;
   }
 
-  const oldRole = member.role;
+  //Removing discord role
+  const tksRoles = await rolesDB.read();
+  const currentRole = member.role;
+
+  const nextRole = tksRoles.data.roles.find((r) => r.name === rank);
+  const currentRoleId = tksRoles.data.roles.find((r) => r.name === currentRole);
+  if (currentRoleId) {
+    await user.roles.remove(currentRoleId.id);
+    await user.roles.add(nextRole.id);
+  }
+
   const today = moment.tz("Asia/Dhaka").format("YYYY-MM-DD HH:mm:ss");
 
   member.role_history.push({
@@ -46,7 +56,11 @@ export default async function handlingPromotion(interaction) {
 
   //sending promotion message to channel
 
-  const format = `<@${user.id}>  **Congratulations** 🎉 🎉 🎉 🎉 \nYou have been promoted to **${rank}** of **The 18K Sin's** \n> Your name tag is ${promotionMessage}`;
+  const format = `<@${
+    user.id
+  }>  **Congratulations** 🎉 🎉 🎉 🎉 \nYou have been promoted to **${rank}** of **The 18K Sin's.** ${
+    !promotionMessage ? " " : `\n> Your name tag is **${promotionMessage}**`
+  }`;
   await channel.send(format);
   await interaction.editReply(
     `<@${user.id}> Promoted to **${rank}**. And roster is updated.`
