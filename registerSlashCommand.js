@@ -68,7 +68,7 @@ const commands = [
         required: true,
         // Add choices for the promotion reason
         choices: [
-          { name: "Leader", value: "Leader" },
+          { name: "LEADER", value: "Leader" },
           { name: "CO-LEADER", value: "CO-LEADER" },
           { name: "STREET BOSS", value: "STREET BOSS" },
           { name: "ADVISER", value: "ADVISER" },

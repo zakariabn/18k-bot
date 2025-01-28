@@ -11,8 +11,11 @@
           "promote_date": "2025-01-01"
         }
       ],
-      "online_time": "00:37:00",
-      "playerTimer": null
+      "online_time": "2060:49:26",
+      "playerTimer": {
+        "startTime": "2025-01-27T18:44:26.350Z",
+        "elapsedTime": 0
+      }
     },
     {
       "discord_user_id": "964442000931844176",
@@ -25,22 +28,56 @@
           "promote_date": "2025-01-01"
         }
       ],
-      "online_time": "01:27:41",
-      "playerTimer": null
+      "online_time": "1802:21:56",
+      "playerTimer": {
+        "startTime": "2025-01-27T19:19:25.478Z",
+        "elapsedTime": 0
+      }
     },
     {
       "discord_user_id": "805657176508334110",
       "ign": "POLO",
       "steam_name": "POLO",
-      "role": "CO-LEADER",
+      "role": "CAPOREGIME",
       "role_history": [
         {
           "role": "CO-LEADER",
           "promote_date": "2025-01-01"
+        },
+        {
+          "role": "STREET BOSS",
+          "promote_date": "2025-01-28 05:23:24"
+        },
+        {
+          "role": "STREET BOSS",
+          "promote_date": "2025-01-28 05:25:32"
+        },
+        {
+          "role": "ADVISER",
+          "promote_date": "2025-01-28 05:35:33"
+        },
+        {
+          "role": "ADVISER",
+          "promote_date": "2025-01-28 05:36:52"
+        },
+        {
+          "role": "ADVISER",
+          "promote_date": "2025-01-28 05:38:55"
+        },
+        {
+          "role": "CAPOREGIME",
+          "promote_date": "2025-01-28 05:56:16"
+        },
+        {
+          "role": "CAPOREGIME",
+          "promote_date": "2025-01-28 05:57:03"
         }
       ],
-      "online_time": "00:41:51",
-      "playerTimer": null
+      "online_time": "1785:36:32",
+      "playerTimer": {
+        "startTime": "2025-01-27T19:21:39.369Z",
+        "elapsedTime": 0
+      }
     },
     {
       "discord_user_id": "726739687309312061",
@@ -53,8 +90,11 @@
           "promote_date": "2025-01-01"
         }
       ],
-      "online_time": "02:38:41",
-      "playerTimer": null
+      "online_time": "1834:34:24",
+      "playerTimer": {
+        "startTime": "2025-01-27T19:15:05.933Z",
+        "elapsedTime": 0
+      }
     },
     {
       "discord_user_id": "1222247506889408572",
@@ -79,8 +119,11 @@
           "promote_date": "2025-01-01"
         }
       ],
-      "online_time": "01:05:00",
-      "playerTimer": null
+      "online_time": "2092:08:00",
+      "playerTimer": {
+        "startTime": "2025-01-27T18:44:26.351Z",
+        "elapsedTime": 0
+      }
     },
     {
       "discord_user_id": "384585385033859072",
@@ -117,7 +160,7 @@
           "promote_date": "2025-01-01"
         }
       ],
-      "online_time": "01:45:30",
+      "online_time": "11:06:38",
       "playerTimer": null
     },
     {
@@ -143,8 +186,11 @@
           "promote_date": "2025-01-01"
         }
       ],
-      "online_time": "00:25:50",
-      "playerTimer": null
+      "online_time": "1649:26:11",
+      "playerTimer": {
+        "startTime": "2025-01-27T19:40:37.176Z",
+        "elapsedTime": 0
+      }
     },
     {
       "discord_user_id": "334455667788990011",
@@ -169,8 +215,11 @@
           "promote_date": "2025-01-21 17:26:18"
         }
       ],
-      "online_time": "01:40:09",
-      "playerTimer": null
+      "online_time": "2080:02:27",
+      "playerTimer": {
+        "startTime": "2025-01-27T18:44:26.351Z",
+        "elapsedTime": 0
+      }
     },
     {
       "discord_user_id": "1213542315176493117",
@@ -197,9 +246,28 @@
           "promote_date": "2025-01-01 17:26:18"
         }
       ],
-      "playerTimer": null,
-      "online_time": "03:32:02"
+      "playerTimer": {
+        "startTime": "2025-01-27T18:44:26.351Z",
+        "elapsedTime": 0
+      },
+      "online_time": "2206:27:07"
     }
   ],
-  "messageId": "1332757418379182190"
+  "messageId": "1332757418379182190",
+  "discharged_members": [
+    {
+      "discord_user_id": "636159999571394600",
+      "ign": "test",
+      "steam_name": "test",
+      "role": "SOLDIER",
+      "role_history": [
+        {
+          "role": "SOLDIER",
+          "promote_date": "2025-01-28 01:40:15"
+        }
+      ],
+      "discharge_date": "2025-01-27T19:40:48.064Z",
+      "discharge_reason": "test"
+    }
+  ]
 }
