@@ -11,11 +11,8 @@
           "promote_date": "2025-01-01"
         }
       ],
-      "online_time": "2060:49:26",
-      "playerTimer": {
-        "startTime": "2025-01-27T18:44:26.350Z",
-        "elapsedTime": 0
-      }
+      "online_time": "2310:16:33",
+      "playerTimer": null
     },
     {
       "discord_user_id": "964442000931844176",
@@ -28,56 +25,26 @@
           "promote_date": "2025-01-01"
         }
       ],
-      "online_time": "1802:21:56",
-      "playerTimer": {
-        "startTime": "2025-01-27T19:19:25.478Z",
-        "elapsedTime": 0
-      }
+      "online_time": "2025:34:44",
+      "playerTimer": null
     },
     {
       "discord_user_id": "805657176508334110",
       "ign": "POLO",
       "steam_name": "POLO",
-      "role": "CAPOREGIME",
+      "role": "CO-LEADER",
       "role_history": [
         {
           "role": "CO-LEADER",
           "promote_date": "2025-01-01"
         },
         {
-          "role": "STREET BOSS",
-          "promote_date": "2025-01-28 05:23:24"
-        },
-        {
-          "role": "STREET BOSS",
-          "promote_date": "2025-01-28 05:25:32"
-        },
-        {
-          "role": "ADVISER",
-          "promote_date": "2025-01-28 05:35:33"
-        },
-        {
-          "role": "ADVISER",
-          "promote_date": "2025-01-28 05:36:52"
-        },
-        {
-          "role": "ADVISER",
-          "promote_date": "2025-01-28 05:38:55"
-        },
-        {
-          "role": "CAPOREGIME",
-          "promote_date": "2025-01-28 05:56:16"
-        },
-        {
-          "role": "CAPOREGIME",
-          "promote_date": "2025-01-28 05:57:03"
+          "role": "CO-LEADER",
+          "promote_date": "2025-01-28 06:19:59"
         }
       ],
-      "online_time": "1785:36:32",
-      "playerTimer": {
-        "startTime": "2025-01-27T19:21:39.369Z",
-        "elapsedTime": 0
-      }
+      "online_time": "2007:08:54",
+      "playerTimer": null
     },
     {
       "discord_user_id": "726739687309312061",
@@ -90,11 +57,8 @@
           "promote_date": "2025-01-01"
         }
       ],
-      "online_time": "1834:34:24",
-      "playerTimer": {
-        "startTime": "2025-01-27T19:15:05.933Z",
-        "elapsedTime": 0
-      }
+      "online_time": "2061:01:47",
+      "playerTimer": null
     },
     {
       "discord_user_id": "1222247506889408572",
@@ -119,11 +83,8 @@
           "promote_date": "2025-01-01"
         }
       ],
-      "online_time": "2092:08:00",
-      "playerTimer": {
-        "startTime": "2025-01-27T18:44:26.351Z",
-        "elapsedTime": 0
-      }
+      "online_time": "2341:35:07",
+      "playerTimer": null
     },
     {
       "discord_user_id": "384585385033859072",
@@ -186,11 +147,8 @@
           "promote_date": "2025-01-01"
         }
       ],
-      "online_time": "1649:26:11",
-      "playerTimer": {
-        "startTime": "2025-01-27T19:40:37.176Z",
-        "elapsedTime": 0
-      }
+      "online_time": "1856:45:07",
+      "playerTimer": null
     },
     {
       "discord_user_id": "334455667788990011",
@@ -215,11 +173,8 @@
           "promote_date": "2025-01-21 17:26:18"
         }
       ],
-      "online_time": "2080:02:27",
-      "playerTimer": {
-        "startTime": "2025-01-27T18:44:26.351Z",
-        "elapsedTime": 0
-      }
+      "online_time": "2329:29:34",
+      "playerTimer": null
     },
     {
       "discord_user_id": "1213542315176493117",
@@ -246,11 +201,8 @@
           "promote_date": "2025-01-01 17:26:18"
         }
       ],
-      "playerTimer": {
-        "startTime": "2025-01-27T18:44:26.351Z",
-        "elapsedTime": 0
-      },
-      "online_time": "2206:27:07"
+      "playerTimer": null,
+      "online_time": "2455:54:14"
     }
   ],
   "messageId": "1332757418379182190",

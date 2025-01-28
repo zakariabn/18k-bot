@@ -142,7 +142,7 @@ async function GangPlayerStatus() {
           const sessionDuration = formatTime(elapsedTime);
           const totalOnlineTime = member.online_time;
 
-          await sendSessionLog(member, sessionDuration, totalOnlineTime);
+          // await sendSessionLog(member, sessionDuration, totalOnlineTime);
 
           member.playerTimer = null;
         }
