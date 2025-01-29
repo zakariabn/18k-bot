@@ -10,7 +10,7 @@ export default async function handlingDischarge(interaction) {
   const reason = options.getString("reason");
   const lastMessage =
     options.getString("end_message") ||
-    "Thanks for your time. Hope you will be back! 💖";
+    "Thanks for your time & effort. Hope you will be back! 💖";
 
   // Load the roster database
   const db = rosterDB;
@@ -86,7 +86,8 @@ export default async function handlingDischarge(interaction) {
   await UpdateRoster();
 
   // Send a discharge message to the channel
-  const dischargeFormat = `<@${user.id}> You're discharged from **THE 18K SIN'S**. \n\nReason: **${reason}** \n\n${lastMessage}`;
+  const dischargeFormat = `<@${user.id}> You're discharged from **THE 18K SIN'S**, For **${reason}** \n\n${lastMessage}`;
+
   try {
     const sendMessage = await channel.send({ content: dischargeFormat });
     await sendMessage.react("🫡");

@@ -90,6 +90,21 @@
       },
       "nid": "https://cdn.discordapp.com/ephemeral-attachments/1330068479952552006/1332769085196337253/Screenshot_433.png?ex=6796756f&is=679523ef&hm=dbdb7c2f0b8219dfa63ba8d601a5ca259ffb02d6d961910c7f65613707308933&",
       "status": "active"
+    },
+    {
+      "tax_id": "tks-006",
+      "payer_name": "Mafia Mini",
+      "b_Name": "",
+      "valid": 3,
+      "expired_date": "2025-02-01 00:00:00",
+      "due": 0,
+      "paid": 6000,
+      "collector": {
+        "name": "E-10 | Salman Farshi",
+        "id": "899574126719680512"
+      },
+      "nid": "https://cdn.discordapp.com/ephemeral-attachments/1330068479952552006/1332769085196337253/Screenshot_433.png?ex=6796756f&is=679523ef&hm=dbdb7c2f0b8219dfa63ba8d601a5ca259ffb02d6d961910c7f65613707308933&",
+      "status": "active"
     }
   ]
 }

@@ -4,7 +4,7 @@ import { EmbedBuilder } from "@discordjs/builders";
 import { taxDB } from "../../Component/db.js";
 
 export default async function handlingTurfTax(interaction) {
-  const { commandName, options, channel } = interaction;
+  const { commandName, options, channel, member } = interaction;
   const ExpiredTaxChannel = client.channels.cache.get("1329135806904008734");
 
   await interaction.deferReply({ ephemeral: true });
@@ -51,7 +51,7 @@ export default async function handlingTurfTax(interaction) {
     due: dueAmount,
     paid: paidAmount,
     collector: {
-      name: interaction?.member?.nickname,
+      name: member?.displayName || "Undefined",
       id: interaction?.user?.id,
     },
     nid: nidAttachment,
@@ -76,9 +76,7 @@ export default async function handlingTurfTax(interaction) {
     .setImage(nidAttachment)
     .setTimestamp()
     .setFooter({
-      text: `Collector: ${"`"}${
-        interaction?.member?.nickname || interaction?.user?.username
-      }${"`"} Time`,
+      text: `Collector: ${member?.displayName}$ |`,
     });
   //
 

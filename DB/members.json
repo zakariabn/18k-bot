@@ -11,7 +11,7 @@
           "promote_date": "2025-01-01"
         }
       ],
-      "online_time": "2310:16:33",
+      "online_time": "00:00:00",
       "playerTimer": null
     },
     {
@@ -25,8 +25,11 @@
           "promote_date": "2025-01-01"
         }
       ],
-      "online_time": "2025:34:44",
-      "playerTimer": null
+      "online_time": "02:01:52",
+      "playerTimer": {
+        "startTime": "2025-01-29T17:05:34.932Z"
+      },
+      "session_logged": false
     },
     {
       "discord_user_id": "805657176508334110",
@@ -37,14 +40,14 @@
         {
           "role": "CO-LEADER",
           "promote_date": "2025-01-01"
-        },
-        {
-          "role": "CO-LEADER",
-          "promote_date": "2025-01-28 06:19:59"
         }
       ],
-      "online_time": "2007:08:54",
-      "playerTimer": null
+      "online_time": "01:47:26",
+      "playerTimer": {
+        "startTime": "2025-01-29T17:16:07.129Z"
+      },
+      "sessionLogged": true,
+      "session_logged": false
     },
     {
       "discord_user_id": "726739687309312061",
@@ -57,7 +60,7 @@
           "promote_date": "2025-01-01"
         }
       ],
-      "online_time": "2061:01:47",
+      "online_time": "00:00:00",
       "playerTimer": null
     },
     {
@@ -83,8 +86,11 @@
           "promote_date": "2025-01-01"
         }
       ],
-      "online_time": "2341:35:07",
-      "playerTimer": null
+      "online_time": "01:12:33",
+      "playerTimer": {
+        "startTime": "2025-01-29T16:56:03.936Z"
+      },
+      "session_logged": false
     },
     {
       "discord_user_id": "384585385033859072",
@@ -121,8 +127,9 @@
           "promote_date": "2025-01-01"
         }
       ],
-      "online_time": "11:06:38",
-      "playerTimer": null
+      "online_time": "01:53:48",
+      "playerTimer": null,
+      "session_logged": true
     },
     {
       "discord_user_id": "1127691132806103172",
@@ -147,8 +154,9 @@
           "promote_date": "2025-01-01"
         }
       ],
-      "online_time": "1856:45:07",
-      "playerTimer": null
+      "online_time": "01:01:02",
+      "playerTimer": null,
+      "session_logged": true
     },
     {
       "discord_user_id": "334455667788990011",
@@ -173,8 +181,9 @@
           "promote_date": "2025-01-21 17:26:18"
         }
       ],
-      "online_time": "2329:29:34",
-      "playerTimer": null
+      "online_time": "01:43:27",
+      "playerTimer": null,
+      "session_logged": true
     },
     {
       "discord_user_id": "1213542315176493117",
@@ -187,7 +196,7 @@
           "promote_date": "2025-01-01"
         }
       ],
-      "online_time": "",
+      "online_time": "00:00:00",
       "playerTimer": null
     },
     {
@@ -201,25 +210,14 @@
           "promote_date": "2025-01-01 17:26:18"
         }
       ],
-      "playerTimer": null,
-      "online_time": "2455:54:14"
+      "playerTimer": {
+        "startTime": "2025-01-29T14:49:54.868Z",
+        "elapsedTime": 21495317
+      },
+      "online_time": "00:00:00",
+      "session_logged": false
     }
   ],
   "messageId": "1332757418379182190",
-  "discharged_members": [
-    {
-      "discord_user_id": "636159999571394600",
-      "ign": "test",
-      "steam_name": "test",
-      "role": "SOLDIER",
-      "role_history": [
-        {
-          "role": "SOLDIER",
-          "promote_date": "2025-01-28 01:40:15"
-        }
-      ],
-      "discharge_date": "2025-01-27T19:40:48.064Z",
-      "discharge_reason": "test"
-    }
-  ]
+  "discharged_members": []
 }

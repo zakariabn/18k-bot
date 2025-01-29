@@ -2,10 +2,11 @@ import dotenv from "dotenv";
 dotenv.config();
 import { Client, Events, GatewayIntentBits } from "discord.js";
 import CommandsHandel from "./src/prefixCommands/prefixCommand.js";
-import SendGangPlayerStatus from "./src/features/gangsPlayersStatus/ourGangPlayersStatus.js";
+// import SendGangPlayerStatus from "./src/features/gangsPlayersStatus/ourGangPlayersStatus.js";
 import interactionHandle from "./src/slashCommands/interactionHandel.js";
 import sendAllGangsPlayerStatus from "./src/features/gangsPlayersStatus/allGangPlayersStatus.js";
 import { dailyCornJob } from "./src/features/taxManagement/taxManagement.js";
+import SendOurPlayerStatus from "./src/features/gangsPlayersStatus/ourPlayerStatus.js";
 
 const client = new Client({
   intents: [
@@ -35,7 +36,8 @@ client.once(Events.ClientReady, (readyClient) => {
     });
 
     // sending status at bot startup
-    SendGangPlayerStatus();
+    // SendGangPlayerStatus();
+    SendOurPlayerStatus();
     sendAllGangsPlayerStatus();
 
     //daily task. will triggered at midnight.
